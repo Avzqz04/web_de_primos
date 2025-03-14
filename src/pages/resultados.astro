@@ -1,0 +1,23 @@
+---
+import PrimesList from '../components/PrimesList.tsx';
+
+const { searchParams } = Astro.url;
+const numberParam = searchParams.get('number');
+const number = numberParam ? Number(numberParam) : NaN;
+
+if (isNaN(number) || number <= 0) {
+  Astro.redirect('/');
+}
+---
+
+<html lang="es">
+  <head>
+    <title>Resultados</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="flex justify-center items-center h-screen bg-gray-100">
+      <PrimesList client:only="react" number={number} />
+    </div>
+  </body>
+</html>

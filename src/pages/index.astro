@@ -1,0 +1,29 @@
+---
+import { useState } from 'react';
+
+let number = 0;
+---
+
+<html lang="es">
+  <head>
+    <title>Página web de números primos</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="flex justify-center items-center h-screen bg-gray-100">
+      <div class="p-6 bg-white shadow-lg rounded-lg w-96">
+        <h1 class="text-2xl font-semibold mb-4">Introduce cualquier numero</h1>
+        <form action="/resultados" method="get">
+          <input 
+            type="number" 
+            name="number" 
+            placeholder="Ej... 45"
+            class="p-2 border border-gray-300 rounded mb-4 w-full" 
+            required
+          />
+          <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded">enviar</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
